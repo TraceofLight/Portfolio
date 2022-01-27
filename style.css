@@ -16,6 +16,8 @@
   --color-orange: #feb546;
   --color-black: #000000;
   --color-sky-blue: #42bee3;
+  --color-mint: #57ffa3;
+  --color-fine: rgb(214, 247, 255);
   --color-coral: rgb(255, 127, 80);
 
   /* Font size */
@@ -118,15 +120,19 @@ button {
   margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
+  border: 2px solid transparent;
+  font-weight: var(--weight-semi-bold);
 }
 
 .navbar__menu__item.active {
-  border: 1px solid var(--color-white);
+  border: 2px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
-  border: 1px solid var(--color-coral);
+  border: 2px solid var(--color-coral);
+  transition-duration: 300ms;
   background-color: var(--color-blue);
+  font-weight: var(--weight-semi-bold);
 }
 
 .navbar__logo {
@@ -168,20 +174,225 @@ button {
   border-radius: 4px;
   color: var(--color-light-grey);
 }
+
+/* Section Common */
+
+.section {
+  padding: 50px;
+  text-align: center;
+}
+
+/* About */
+
 #about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0px;
+}
+
+.about__title {
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+.about__description {
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-weight: var(--weight-semi-bold);
 }
 
 #about__majors {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 12px 0;
+}
+
+#major {
+  width: 27vw;
+  padding: 15px;
+  justify-content: center;
+  border: 2px solid var(--color-sky-blue);
+  border-radius: var(--size-border-radius);
+}
+
+#major__icon {
+  margin: 2vw 0;
+}
+
+#major__title {
+  font-weight: var(--weight-semi-bold);
 }
 
 .job {
+  margin: 12px;
   display: flex;
+  text-align: center;
   justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--color-coral);
+  border-radius: var(--size-border-radius);
+}
+
+#job__logo {
+  width: 50px;
+  margin: 0 0 0 15vw;
+  color: var(--color-blue);
+}
+
+.job__description {
+  margin: 0 15vw 0 0;
+  text-align: right;
+}
+
+#job__name {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+}
+
+#job__period {
+  font-size: var(--font-micro);
+}
+
+/* Skills */
+
+#skills {
+  display: flex;
+  background: var(--color-fine);
+  flex-direction: column;
+}
+.skills__title {
+  margin: 0 0 2vw;
+}
+.skills__description {
+  font-weight: var(--weight-semi-bold);
+}
+
+.skillset {
+  display: flex;
+  justify-content: space-around;
+  background: var(--color-white);
+  border-radius: var(--size-border-radius);
+  margin: 2vh 0 0 0;
+}
+
+.skillset__title {
+  font-weight: var(--weight-semi-bold);
+  margin: 2vw 0;
+}
+
+.skillset__progress {
+  width: 38vw;
+}
+.skillset__left,
+.skillset__right {
+  justify-content: flex-end;
+  width: 40vw;
+  margin: 1vh;
+}
+
+.skillset__description {
+  font-size: var(--font-micro);
+  font-weight: var(--weight-semi-bold);
+  text-align: right;
+  padding: 1vw;
+  border: 1px solid var(--color-coral);
+  border-radius: var(--size-border-radius);
+}
+
+.skillset__etc {
+  background: var(--color-light-white);
+  padding: 1vh;
+  border-radius: var(--size-border-radius);
+}
+
+.skillset__etc__title {
+  font-weight: var(--weight-semi-bold);
+}
+
+/* Works */
+
+#work {
+  flex-direction: row;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.work__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2vh 0;
+}
+
+.category__btn {
+  border: 2px solid var(--color-sky-blue);
+  margin: 0.3vw;
+}
+
+.category__count {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  color: black;
+  margin: 0 0 0 1vw;
+}
+
+.work__projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-light-white);
+  width: 30vw;
+  height: 20vh;
+  margin: 0.5vw;
+}
+
+.project__img {
+  width: 27vw;
+  max-height: 18vh;
+}
+
+.work__projects__line1,
+.work__projects__line2 {
+  display: flex;
+  align-items: center;
+}
+
+#testimonials {
+  background: var(--color-fine);
+}
+
+.testimonial__1,
+.testimonial__2 {
+  display: flex;
+  margin: 3vh 0 0 0;
+}
+
+.testimonial__avatar {
+  width: 100px;
+  margin: 1vh 5vw;
+  border-radius: 50%;
+}
+
+.testimonial__speech-bubble {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-yellow);
+  border-radius: var(--size-border-radius);
+  padding: 1vh 2vw;
+  text-align: left;
+}
+
+.name {
+  color: var(--color-coral);
+  font-weight: var(--weight-semi-bold);
+  text-align: right;
+}
+
+.contact__links {
+  margin: 2vh 0;
+}
+.github {
+  color: var(--color-sky-blue);
+  margin: 1.5vw;
 }
