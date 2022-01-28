@@ -37,6 +37,10 @@
   /* Size */
 
   --size-border-radius: 4px;
+
+  /* Animation */
+
+  --animation-duration: 300ms;
 }
 
 /* Universal tags */
@@ -69,7 +73,7 @@ h1 {
 
 h2 {
   font-size: var(--font-regular);
-  font-weight: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
 }
@@ -180,133 +184,146 @@ button {
 .section {
   padding: 50px;
   text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  /* 더 늘어나지 않도록 조절 */
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* About */
 
-#about {
+.about__majors {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  margin: auto;
+  border: 1px solid var(--color-sky-blue);
+  border-radius: 50%;
+  margin-bottom: 16px;
+  color: var(--color-sky-blue);
 }
 
-.about__title {
-  margin: 0;
-  padding: 0 0 20px 0;
+.major__icon i {
+  transition: all var(--animation-duration) ease;
 }
 
-.about__description {
-  margin: 0;
-  padding: 0 0 20px 0;
-  font-weight: var(--weight-semi-bold);
+.major__icon:hover i {
+  transform: rotate(-5deg) scale(1.1);
+  color: var(--color-mint);
 }
 
-#about__majors {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 12px 0;
+.major__title,
+.major__description {
+  color: var(--color-grey);
 }
 
-#major {
-  width: 27vw;
-  padding: 15px;
-  justify-content: center;
-  border: 2px solid var(--color-sky-blue);
-  border-radius: var(--size-border-radius);
-}
-
-#major__icon {
-  margin: 2vw 0;
-}
-
-#major__title {
-  font-weight: var(--weight-semi-bold);
+.major__description {
+  font-size: var(--font-small);
 }
 
 .job {
-  margin: 12px;
   display: flex;
-  text-align: center;
-  justify-content: space-between;
   align-items: center;
-  border: 2px solid var(--color-coral);
-  border-radius: var(--size-border-radius);
-}
-
-#job__logo {
-  width: 50px;
-  margin: 0 0 0 15vw;
-  color: var(--color-blue);
 }
 
 .job__description {
-  margin: 0 15vw 0 0;
-  text-align: right;
+  margin: 0 16px;
+  text-align: left;
 }
 
-#job__name {
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
   font-size: var(--font-small);
-  font-weight: var(--weight-semi-bold);
 }
 
-#job__period {
+.job__period {
   font-size: var(--font-micro);
+}
+
+.job__logo {
+  /* 가운데 정렬하는 법 */
+  font-size: 35px;
+  line-height: 50px;
+  width: 50px;
 }
 
 /* Skills */
 
 #skills {
-  display: flex;
-  background: var(--color-fine);
-  flex-direction: column;
-}
-.skills__title {
-  margin: 0 0 2vw;
-}
-.skills__description {
-  font-weight: var(--weight-semi-bold);
+  background-color: var(--color-fine);
+  color: var(--color-light-white);
 }
 
 .skillset {
   display: flex;
-  justify-content: space-around;
-  background: var(--color-white);
-  border-radius: var(--size-border-radius);
-  margin: 2vh 0 0 0;
+  background-color: var(--color-yellow);
+  margin: 20px 0;
 }
 
 .skillset__title {
-  font-weight: var(--weight-semi-bold);
-  margin: 2vw 0;
+  color: var(--color-white);
 }
 
-.skillset__progress {
-  width: 38vw;
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-orange);
+  padding: 20px 40px;
 }
-.skillset__left,
+
+.skill {
+  margin-bottom: 8px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill__value {
+  height: 3px;
+  background-color: var(--color-sky-blue);
+}
+
 .skillset__right {
-  justify-content: flex-end;
-  width: 40vw;
-  margin: 1vh;
+  flex-basis: 40%;
 }
 
-.skillset__description {
-  font-size: var(--font-micro);
-  font-weight: var(--weight-semi-bold);
-  text-align: right;
-  padding: 1vw;
-  border: 1px solid var(--color-coral);
-  border-radius: var(--size-border-radius);
+.tools {
+  background-color: var(--color-coral);
 }
 
-.skillset__etc {
-  background: var(--color-light-white);
-  padding: 1vh;
-  border-radius: var(--size-border-radius);
+/* 색상 변경 필요성에 의한 임의 코딩 */
+
+.etc {
+  color: var(--color-black);
 }
 
-.skillset__etc__title {
-  font-weight: var(--weight-semi-bold);
+.etc .skillset__title {
+  color: var(--color-black);
+}
+
+.tools,
+.etc {
+  padding: 20px;
 }
 
 /* Works */
@@ -396,3 +413,130 @@ button {
   color: var(--color-sky-blue);
   margin: 1.5vw;
 }
+
+/* 직접 짠 코드 수정 전
+
+#about {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__title {
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+.about__description {
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-weight: var(--weight-semi-bold);
+}
+
+#about__majors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+#major {
+  width: 27vw;
+  padding: 15px;
+  justify-content: center;
+  border: 2px solid var(--color-sky-blue);
+  border-radius: var(--size-border-radius);
+}
+
+#major__icon {
+  margin: 2vw 0;
+}
+
+#major__title {
+  font-weight: var(--weight-semi-bold);
+}
+
+.job {
+  margin: 12px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--color-coral);
+  border-radius: var(--size-border-radius);
+}
+
+#job__logo {
+  width: 50px;
+  margin: 0 0 0 15vw;
+  color: var(--color-blue);
+}
+
+.job__description {
+  margin: 0 15vw 0 0;
+  text-align: right;
+}
+
+#job__name {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+}
+
+#job__period {
+  font-size: var(--font-micro);
+}
+
+#skills {
+  display: flex;
+  background: var(--color-fine);
+  flex-direction: column;
+}
+.skills__title {
+  margin: 0 0 2vw;
+}
+.skills__description {
+  font-weight: var(--weight-semi-bold);
+}
+
+.skillset {
+  display: flex;
+  justify-content: space-around;
+  background: var(--color-white);
+  border-radius: var(--size-border-radius);
+  margin: 2vh 0 0 0;
+}
+
+.skillset__title {
+  font-weight: var(--weight-semi-bold);
+  margin: 2vw 0;
+}
+
+.skillset__progress {
+  width: 38vw;
+}
+.skillset__left,
+.skillset__right {
+  justify-content: flex-end;
+  width: 40vw;
+  margin: 1vh;
+}
+
+.skillset__description {
+  font-size: var(--font-micro);
+  font-weight: var(--weight-semi-bold);
+  text-align: right;
+  padding: 1vw;
+  border: 1px solid var(--color-coral);
+  border-radius: var(--size-border-radius);
+}
+
+.skillset__etc {
+  background: var(--color-light-white);
+  padding: 1vh;
+  border-radius: var(--size-border-radius);
+}
+
+.skillset__etc__title {
+  font-weight: var(--weight-semi-bold);
+}
+
+*/

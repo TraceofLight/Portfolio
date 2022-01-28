@@ -41,15 +41,18 @@
         id="home__avatar">
         <h1 class="home__title">Hi, <br/> I'm Newbie Coder</h1>
         <h2 class="home__description">Nice to meet you!</h2>
-        <button id="home__contact" 
-        onclick="location.href='www.linkedin.com/in/heejun-kim-0105bb22a/'"
-        target="_blank">
+        <button id="home__contact" onclick=url() target="_blank">
         Contact Me
         </button>
+        <script>
+            function url() {
+            window.open("https://www.linkedin.com/in/heejun-kim-0105bb22a/")
+            }
+        </script>
     </section>
 
     <!--About-->
-    <section id="about" class="section">
+    <section id="about" class="section section__container">
         <h1 class="about__title">
             About me
         </h1>
@@ -57,38 +60,32 @@
             Dreaming developer about creative something
         </p>
         <!--major 1-->
-        <div class="div" id="about__majors">
-            <div id="major">
-                <div id="major__icon">
-                    <i class="fab fa-html5 fa-3x"></i>
+        <div class="about__majors">
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fab fa-html5"></i>
                 </div>
-                <h3 id="major__title">
-                    Front-End
-                </h3>
+                <h2 class="major__title">Front-End</h2>
                 <div id="major__description">
                     Javascript, HTML, CSS<br/>etc...
                 </div>
             </div>
         <!--major 2-->
-            <div id="major">
-                <div id="major__icon">
-                    <i class="fas fa-mobile-alt fa-3x"></i>
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fas fa-mobile-alt"></i>
                 </div>
-                <h3 id="major__title">
-                    Mobile
-                </h3>
+                <h2 class="major__title">Mobile</h2>
                 <div id="major__description">
                 Android, IOS                
                 </div>
             </div>
         <!--major 3-->
-            <div id="major">
-                <div id="major__icon">
-                    <i class="fas fa-tasks fa-3x"></i>
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fas fa-tasks "></i>
                 </div>
-                <h3 id="major__title">
-                    ERP
-                </h3>
+                <h2 class="major__title">ERP</h2>
                 <div id="major__description">
                     SAP etc...
                 </div>
@@ -97,58 +94,77 @@
         <div class="about__jobs">
             <!--job 1-->
             <div class="job">
-                <img src="/imgs/jobs/yonsei_symbol.png" alt="Symbol of Yonesei University" id="job__logo"> 
+                <img src="/imgs/jobs/yonsei_symbol.png" alt="Symbol of Yonesei University" class="job__logo"> 
                 <div class="job__description">
-                    <p id="job__name">도시공학과 학사 졸업</p>
-                    <p id="job__period">From 2015.03 to 2022.02</p>
+                    <p class="job__name">도시공학과 학사 졸업</p>
+                    <p class="job__period">From 2015.03 to 2022.02</p>
                 </div>
             </div>
             <!--job 2-->
             <div class="job">
-                <i class="fas fa-file-code fa-2x" id="job__logo"></i>
+                <i class="fas fa-file-code job__logo"></i>
                 <div class="job__description">
-                    <p id="job__name">비전공자로 코딩 수련중</p>
-                    <p id="job__period">From 2022.02</p>
+                    <p class="job__name">비전공자로 코딩 수련중</p>
+                    <p class="job__period">From 2022.02</p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!--Skills-->
     <section id="skills" class="section">
-        <div>
-            <h1 class="skills__title">Skills</h1>
-            <h2 class="skills__description">Skills & Attributes</h2>
-            <p class="skills__comment">
-                Nothing I mastered but growing everyday
-            </p>
-        </div>
-        <!--skillset progress-->
-        <div class="skillset">
-            <div class="skillset__left">
-                <h3 class="skillset__title">Skills</h3>
-                <div class="skillset__description">
-                    <span>HTML</span>
-                    <span>50%</span>
-                    <progress class="skillset__progress" value="50" max="100"></progress> 
-                </div>
+        <div class="section__container">
+            <div>
+                <h1 class="skills__title">Skills</h1>
+                <h2 class="skills__description">Skills & Attributes</h2>
+                <p class="skills__comment">
+                    Nothing I mastered but growing everyday
+                </p>
             </div>
-            <div class="skillset__right">
-                <h3 class="skillset__title">Tools</h3>
-                <ul class="tools__list">
-                    <li><span>Visual Studio Code</span></li>
-                    <li><span>IOS Development</span></li>
-                    <li><span>A</span></li>
-                    <li><span>B</span></li>
-                    <li><span>C</span></li>
-                    <li><span>D</span></li>
-                </ul>
-            <div class="skillset__etc">
-                <h3 class="skillset__etc__title">Etc</h3>
-                <ul class="skillset__etc__list">
-                    <li><span>Git1</span></li>
-                    <li><span>Git2</span></li>
-                </ul>
+            <!--skillset progress-->
+            <div class="skillset">
+                <div class="skillset__left">
+                    <h3 class="skillset__title">Skills</h3>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>HTML</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>Javascript</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skillset__right">
+                    <div class="tools">
+                        <h3 class="skillset__title">Tools</h3>
+                        <ul class="tools__list">
+                            <li><span>Visual Studio Code</span></li>
+                            <li><span>IOS Development</span></li>
+                            <li><span>A</span></li>
+                            <li><span>B</span></li>
+                            <li><span>C</span></li>
+                            <li><span>D</span></li>
+                        </ul>
+                    </div>
+                    <div class="etc">
+                        <h3 class="skillset__title">Etc</h3>
+                        <ul class="etc__list">
+                            <li><span>Git1</span></li>
+                            <li><span>Git2</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
