@@ -52,6 +52,8 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   cursor: default;
+  /* 작아지는 거 방지 */
+  min-width: 800px;
 }
 a {
   text-decoration: none;
@@ -424,46 +426,51 @@ button {
   max-height: 100%;
 }
 
-/* Testimonials */
-
 #testimonials {
-  background: var(--color-fine);
+  background-color: var(--color-light-white);
+  margin: 40px;
 }
 
-.testimonial__1,
-.testimonial__2 {
+.testimonials {
+  margin: 40px;
+}
+
+.testimonial {
   display: flex;
-  margin: 3vh 0 0 0;
+  margin: 32px 0;
+  justify-content: space-around;
 }
 
 .testimonial__avatar {
-  width: 100px;
-  margin: 1vh 5vw;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
 .testimonial__speech-bubble {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-yellow);
-  border-radius: var(--size-border-radius) ease;
-  padding: 1vh 2vw;
-  text-align: left;
+  padding: 18px;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
 }
 
-.name {
-  color: var(--color-coral);
+.testimonial__speech-bubble p {
+  color: var(--color-light-grey);
+}
+
+.testimonial__speech-bubble a {
+  color: var(--color-dark-pink);
   font-weight: var(--weight-semi-bold);
-  text-align: right;
 }
 
-.contact__links {
-  margin: 2vh 0;
-}
-.github {
-  color: var(--color-sky-blue);
-  margin: 1.5vw;
-}
+/* Testimonials */
 
 /* 직접 짠 코드 수정 전
 
@@ -635,6 +642,46 @@ button {
 .work__projects__line2 {
   display: flex;
   align-items: center;
+}
+
+
+#testimonials {
+  background: var(--color-fine);
+}
+
+.testimonial__1,
+.testimonial__2 {
+  display: flex;
+  margin: 3vh 0 0 0;
+}
+
+.testimonial__avatar {
+  width: 100px;
+  margin: 1vh 5vw;
+  border-radius: 50%;
+}
+
+.testimonial__speech-bubble {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-yellow);
+  border-radius: var(--size-border-radius) ease;
+  padding: 1vh 2vw;
+  text-align: left;
+}
+
+.name {
+  color: var(--color-coral);
+  font-weight: var(--weight-semi-bold);
+  text-align: right;
+}
+
+.contact__links {
+  margin: 2vh 0;
+}
+.github {
+  color: var(--color-sky-blue);
+  margin: 1.5vw;
 }
 
 */
