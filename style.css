@@ -103,8 +103,6 @@ button {
 
 #navbar {
   display: flex;
-  position: sticky;
-  top: 0;
   justify-content: space-between;
   background-color: var(--color-sky-blue);
   align-items: center;
