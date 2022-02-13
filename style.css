@@ -103,10 +103,15 @@ button {
 
 #navbar {
   display: flex;
+}
+.navbar__all {
+  display: flex;
   justify-content: space-between;
   background-color: var(--color-sky-blue);
   align-items: center;
-  padding: 8px;
+  position: fixed;
+  width: 100%;
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__menu {
@@ -114,7 +119,7 @@ button {
 }
 
 .favicon_logo {
-  margin: 0 12px 0 0;
+  margin: 0 12px;
 }
 
 .navbar__menu__item {
@@ -152,9 +157,16 @@ button {
   display: none;
 }
 
+.nav {
+  transition: all var(--animation-duration) ease-in;
+  background-color: var(--color-fine);
+  opacity: 0.3;
+}
+
 /* home */
 
 #home {
+  margin: 65px 0 0 0;
   background: url(/imgs/home-background.png) center/cover no-repeat;
   display: flex;
   padding: 40px;
@@ -509,12 +521,19 @@ button {
 /* For below 840px screen width */
 
 @media screen and (max-width: 840px) {
+  #home {
+    margin: 65px 0 0 0;
+  }
   .navbar__toggle-btn {
     display: block;
   }
-  #navbar {
+  .navbar__logo {
+    line-height: 65px;
+  }
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
+    min-height: 65px;
   }
   .navbar__menu {
     flex-direction: column;
