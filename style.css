@@ -102,9 +102,10 @@ button {
 /* Navbar */
 
 #navbar {
-  display: flex;
+  min-height: 74px;
 }
-.navbar__all {
+
+.navbar {
   display: flex;
   justify-content: space-between;
   background-color: var(--color-sky-blue);
@@ -114,8 +115,20 @@ button {
   transition: all var(--animation-duration) ease-in-out;
 }
 
+.nav {
+  transition: all var(--animation-duration) ease-in;
+  background-color: var(--color-fine);
+  opacity: 0.8;
+}
+
 .navbar__menu {
   display: flex;
+}
+
+.navbar__menu__display {
+  display: flex;
+  transition: all var(--animation-duration) ease-in;
+  opacity: 0.7;
 }
 
 .favicon_logo {
@@ -157,16 +170,9 @@ button {
   display: none;
 }
 
-.nav {
-  transition: all var(--animation-duration) ease-in;
-  background-color: var(--color-fine);
-  opacity: 0.3;
-}
-
 /* home */
 
 #home {
-  margin: 65px 0 0 0;
   background: url(/imgs/home-background.png) center/cover no-repeat;
   display: flex;
   padding: 40px;
@@ -521,11 +527,12 @@ button {
 /* For below 840px screen width */
 
 @media screen and (max-width: 840px) {
-  #home {
-    margin: 65px 0 0 0;
+  #navbar {
+    min-height: 65px;
   }
+
   .navbar__toggle-btn {
-    display: block;
+    display: flex;
   }
   .navbar__logo {
     line-height: 65px;
@@ -533,14 +540,15 @@ button {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    min-height: 65px;
   }
   .navbar__menu {
     flex-direction: column;
     text-align: center;
-    width: 100%;
+    margin: auto;
     display: none;
+    transition: all var(--animation-duration) ease-in-out;
   }
+
   .about__majors {
     flex-direction: column;
   }
@@ -561,6 +569,11 @@ button {
   }
 
   .navbar__menu_onclick {
+    transition: all var(--animation-duration) ease-in-out;
+  }
+
+  .navbar__menu_toggle {
+    display: flex;
     transition: all var(--animation-duration) ease-in-out;
   }
 }

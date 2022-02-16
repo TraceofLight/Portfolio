@@ -1,28 +1,28 @@
 "Use Strict";
 
-const nav = document.getElementsByClassName("navbar__all");
+// stick the navbar
 
+const navbar = document.getElementsByClassName("navbar");
 window.onscroll = function sticky() {
-  if (window.scrollY > nav.scrollTop) {
-    nav.classList.add("nav");
+  if (window.scrollY > navbar[0].scrollTop) {
+    navbar[0].classList.add("nav");
   } else {
-    nav.classList.remove("nav");
+    navbar[0].classList.remove("nav");
   }
 };
 
-const media = matchMedia("screen and (max-width: 840px)")
-const nav_toggle = document.getElementsByClassName("navbar__toggle-btn");
-const nav_menu = document.getElementsByClassName("navbar__menu");
-const nav_display = media.nav_menu.style.display;
+// const media = matchMedia("screen and (max-width: 840px)");
+const navbar__toggle = document.getElementsByClassName("navbar__toggle-btn");
+const navbar__menu = document.getElementsByClassName("navbar__menu");
+const navbar__menu_style = window.getComputedStyle(navbar__menu[0]);
 
-nav_toggle.addEventListener("click", display());
+// navbar-menu control
 
+navbar__toggle[0].addEventListener("click", display);
 function display() {
-  if(media.nav_menu.style.display == 'none') {
-    media.nav_menu.style.display = 'flex',
-    media.nav_menu.classList.add("nav__menu_onclick");
+  if (navbar__menu_style.display == "none") {
+    navbar__menu[0].classList.add("navbar__menu_toggle");
   } else {
-    media.nav_menu.style.display = 'none',
-    media.nav_menu.classList.remove("nav__menu_onclick");
+    navbar__menu[0].classList.remove("navbar__menu_toggle");
   }
 }
