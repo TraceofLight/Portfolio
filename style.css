@@ -559,6 +559,10 @@ button {
     width: 80px;
     height: 80px;
   }
+
+  .navbar__menu_onclick {
+    transition: all var(--animation-duration) ease-in-out;
+  }
 }
 
 /* 직접 짠 코드 수정 전
