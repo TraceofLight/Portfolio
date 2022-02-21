@@ -1,15 +1,28 @@
 "Use Strict";
 
-// stick the navbar
+// stick the navbar & Transperent
 
-const navbar = document.getElementsByClassName("navbar");
-window.onscroll = function sticky() {
-  if (window.scrollY > navbar[0].scrollTop) {
-    navbar[0].classList.add("nav");
-  } else {
-    navbar[0].classList.remove("nav");
+const navbar = document.querySelector('#navbar');
+const navbarHeight = navbar.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  console.log(window.scrollY);
+  console.log(`Height is ${navbarHeight}`);
+  if(window.scrollY > navbarHeight) {
+      navbar.classList.add("nav");   
+    } else {
+      navbar.classList.remove("nav");
   }
-};
+});
+
+// og_code
+// const navbar = document.getElementsByClassName("navbar");
+// window.onscroll = function sticky() {
+//   if (window.scrollY > navbar[0].scrollTop) {
+//     navbar[0].classList.add("nav");
+//   } else {
+//     navbar[0].classList.remove("nav");
+//   }
+// };
 
 // navbar-menu control
 
