@@ -39,7 +39,17 @@ function display() {
   }
 }
 
-// connect menu to section
+// Scroll to section
+
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event) => {
+  const target = event.target;
+  const link = target.dataset.link;
+  if(link == null) {
+    return;
+  }
+  console.log(event.target.dataset.link);
+});
 
 const home__contact = document.getElementsByClassName("home__contact");
 const navbar__menu__item = document.getElementsByClassName("navbar__menu__item");
