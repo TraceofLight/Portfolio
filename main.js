@@ -5,8 +5,8 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
-  console.log(`Height is ${navbarHeight}`);
+//  console.log(window.scrollY);
+//  console.log(`Height is ${navbarHeight}`);
   if(window.scrollY > navbarHeight) {
       navbar.classList.add("nav");   
     } else {
@@ -53,6 +53,20 @@ navbarMenu.addEventListener('click', (event) => {
   scrollTo.scrollIntoView({behavior: 'smooth'});
   navbar__menu[0].classList.remove("navbar__menu_toggle");
 });
+
+// Scroll to Contact Me
+
+const contactBtn = document.querySelector('#home__contact');
+// console.log(contactBtn);
+contactBtn.addEventListener('click', () => {
+  scrollIntoView('#contact');
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior: 'smooth'});
+  navbar__menu[0].classList.remove("navbar__menu_toggle");
+}
 
 //const home__contact = document.getElementsByClassName("home__contact");
 //const navbar__menu__item = document.getElementsByClassName("navbar__menu__item");
