@@ -211,7 +211,7 @@ button {
 /* Section Common */
 
 .section {
-  padding: 50px;
+  padding: 75px 50px 50px 50px;
   text-align: center;
   margin: auto;
 }
@@ -534,6 +534,8 @@ button {
 @media screen and (max-width: 840px) {
   #navbar {
     min-height: 65px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .navbar__toggle-btn {
