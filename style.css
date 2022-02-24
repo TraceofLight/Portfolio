@@ -99,6 +99,10 @@ button {
   cursor: pointer;
 }
 
+.fading {
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
 /* Navbar */
 
 #navbar {

@@ -2,8 +2,13 @@
 
 // stick the navbar & Transperent
 
+function getHeight(id) {
+  const selection = document.querySelector(id);
+  return selection.getBoundingClientRect().height;
+}
+
 const navbar = document.querySelector('#navbar');
-const navbarHeight = navbar.getBoundingClientRect().height;
+const navbarHeight = getHeight('#navbar');
 document.addEventListener('scroll', () => {
 //  console.log(window.scrollY);
 //  console.log(`Height is ${navbarHeight}`);
@@ -68,14 +73,52 @@ function scrollIntoView(selector) {
   navbar__menu[0].classList.remove("navbar__menu_toggle");
 }
 
-//const home__contact = document.getElementsByClassName("home__contact");
-//const navbar__menu__item = document.getElementsByClassName("navbar__menu__item");
-
+// og_code
 //for (let i = 0 ; i > length.navbar__menu__item; i++) {
 //navbar__menu__item[i].addEventListener("click", move)};
 // function move() {
 //  window.scrollTo(window.offset(navbar__menu__item[i].innerText))
 // };
+
+// Fading by scroll
+
+function fading(id, timing) {
+  const id_ = document.querySelector(id);
+  document.addEventListener('scroll', () => {
+    if (window.scrollY - getHeight(id) + timing > 0) {
+      id_.classList.add("fading");
+    } else {
+      id_.classList.remove("fading");
+    }
+  }
+  );
+}
+
+fading(#home,-200);
+fading(#about,300);
+fading(#skills,300);
+fading(#work,300);
+fading(#testimonials,300);
+fading(#contact,300);
+
+/*const home = document.querySelector('#home');
+
+document.addEventListener('scroll', () => {
+  //console.log(getHeight('#home'));
+  if(window.scrollY - getHeight('#home')>-300) {
+    //console.log(window.scrollY);
+    home.classList.add("fading");
+    //console.log(home.classList);    
+} else {
+  home.classList.remove("fading");
+}
+})
+
+*/
+
+//const home__contact = document.getElementsByClassName("home__contact");
+//const navbar__menu__item = document.getElementsByClassName("navbar__menu__item");
+
 
 /* Test code
 const media = matchMedia("screen and (max-width: 840px)");
