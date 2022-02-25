@@ -82,30 +82,56 @@ function scrollIntoView(selector) {
 
 // Fading by scroll
 
-function fading(id, timing) {
+/* const home = document.querySelector('#home');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+}); */
+
+function fading(id) {
+const id_query = document.querySelector(id);
+const idHeight = id_query.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  id_query.style.opacity = 1 - (window.scrollY / idHeight);
+});
+}
+
+fading('.home__container');
+//fading('#about');
+//fading('#skills');
+//fading('#work');
+//fading('#testimonials');
+//fading('#contact');
+
+/* og_code
+
+function fading(id) {
   const id_ = document.querySelector(id);
   document.addEventListener('scroll', () => {
-    if (window.scrollY - getHeight(id) + timing > 0) {
-      id_.classList.add("fading");
+    if (window.scrollY - getHeight(id) > 0) {
+      console.log(id);
+
+      //id_.classList.add("fading");
+      console.log(`${window.scrollY} and ${getHeight(id)}`)
     } else {
-      id_.classList.remove("fading");
+      //id_.classList.remove("fading");
     }
   }
   );
 }
 
-fading(#home,-200);
-fading(#about,300);
-fading(#skills,300);
-fading(#work,300);
-fading(#testimonials,300);
-fading(#contact,300);
+fading('#home', 100);
+fading('#about',100);
+fading('#skills',100);
+fading('#work',100);
+fading('#testimonials',100);
+fading('#contact',100);
 
-/*const home = document.querySelector('#home');
+const home = document.querySelector('#home');
 
 document.addEventListener('scroll', () => {
   //console.log(getHeight('#home'));
-  if(window.scrollY - getHeight('#home')>-300) {
+  if(window.scrollY - getHeight('#home')>300) {
     //console.log(window.scrollY);
     home.classList.add("fading");
     //console.log(home.classList);    

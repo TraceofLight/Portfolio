@@ -99,10 +99,6 @@ button {
   cursor: pointer;
 }
 
-.fading {
-  opacity: 0;
-  transition: all var(--animation-duration) ease-in;
-}
 /* Navbar */
 
 #navbar {
@@ -116,6 +112,7 @@ button {
   width: 100%;
   opacity: 0.8;
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 999;
 }
 
 #navbar.nav {
