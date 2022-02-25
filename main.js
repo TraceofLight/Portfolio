@@ -97,6 +97,7 @@ document.addEventListener('scroll', () => {
 }
 
 fading('.home__container');
+
 //fading('#about');
 //fading('#skills');
 //fading('#work');
@@ -145,7 +146,18 @@ document.addEventListener('scroll', () => {
 //const home__contact = document.getElementsByClassName("home__contact");
 //const navbar__menu__item = document.getElementsByClassName("navbar__menu__item");
 
+// Arrow Button
 
-/* Test code
-const media = matchMedia("screen and (max-width: 840px)");
-*/
+function Arrow() {
+  const arrowBtn = document.querySelector('.arrowBtn')
+  const top = document.querySelector('#home');
+  arrowBtn.addEventListener('click', () => {
+    top.scrollIntoView({behavior: 'smooth'});
+    }
+  );
+}
+
+Arrow();
+
+// Test code
+// const media = matchMedia("screen and (max-width: 840px)");

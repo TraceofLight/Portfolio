@@ -142,7 +142,7 @@ button {
 }
 
 .navbar__menu__item {
-  padding: 8px 12px;
+  padding: 8px 8px;
   margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
@@ -530,9 +530,25 @@ button {
   transition: all var(--animation-duration) ease-in;
 }
 
+.arrowBtn img {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0.7;
+}
+
+.arrowBtn {
+  font-style: normal;
+  border-radius: var(--size-border-radius);
+}
 /* For below 840px screen width */
 
-@media screen and (max-width: 840px) {
+
+
+@media screen and (max-width: 768px) {
   #navbar {
     min-height: 65px;
     flex-direction: column;
@@ -552,7 +568,7 @@ button {
   .navbar__menu {
     flex-direction: column;
     text-align: center;
-    margin: auto;
+    margin: 4px auto;
     display: none;
     transition: all var(--animation-duration) ease-in-out;
   }
@@ -583,6 +599,11 @@ button {
   .navbar__menu_toggle {
     display: flex;
     transition: all var(--animation-duration) ease-in-out;
+  }
+}
+@media screen and (max-width: 450px) {
+  body {
+    min-width: 450px;
   }
 }
 
