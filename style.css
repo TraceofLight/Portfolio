@@ -357,16 +357,25 @@ button {
 }
 
 /* Works */
-
+.work__btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .work__categories {
   margin: 40px;
 }
 
 .category__btn {
+  display: flex;
+  justify-content: space-between;
+  min-width: 140px;
+  padding: 4px 8px;
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
-  padding: 8px 48px;
+  margin: 6px 4px;
+  line-height: 24px;
 }
 
 .category__btn:hover {
@@ -382,18 +391,18 @@ button {
 }
 
 .category__count {
+  display: inline-block;
   font-weight: var(--weight-semi-bold);
   width: 24px;
   height: 24px;
+  margin: 0 4px;
   border: 1px solid var(--color-orange);
   background-color: var(--color-yellow);
   border-radius: 50%;
-  display: inline-block;
   line-height: 24px;
   position: relative;
   top: -20px;
   left: 4px;
-  /* 투명도 */
   opacity: 0;
   transition: all var(--animation-duration) ease;
 }
@@ -406,13 +415,17 @@ button {
 
 .project {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 280px;
   height: 250px;
-  margin: 2px;
+  margin: 3px;
   background-color: var(--color-light-white);
+}
+
+.project__display {
+  display: flex;
 }
 
 .project__description {
@@ -433,7 +446,6 @@ button {
 }
 
 .project__description h3:after {
-  content: "";
   display: block;
   position: relative;
   left: 50%;
@@ -601,8 +613,9 @@ button {
     transition: all var(--animation-duration) ease-in-out;
   }
 }
+
 @media screen and (max-width: 450px) {
-  body {
+  #full_container {
     min-width: 450px;
   }
 }

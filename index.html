@@ -15,9 +15,10 @@
     <link rel="icon" href="/imgs/favicon.png">
     <link rel="stylesheet" href="style.css">
     <!--<link rel="stylesheet" href="/font-awesome.min.css" type="text/css">-->
-    <script async src="main.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
+    <div id="full_container">
     <!-- Navbar -->
     <section>
         <nav id="navbar">
@@ -179,55 +180,59 @@
             <h3>Projects</h3>
             <div class="work__categories">
                 <div class="work__btn">
-                    <button class="category__btn">All <span class="category__count">8</span></button>
-                    <button class="category__btn">Front-End <span class="category__count">3</span></button>
-                    <button class="category__btn">Back-End <span class="category__count">3</span></button>
-                    <button class="category__btn">Mobile <span class="category__count">2</span></button>
+                    <button class="category__btn" data-type="all">All
+                        <div class="category__count">6</div></button>
+                    <button class="category__btn" data-type="front">Front-End
+                        <div class="category__count">3</div></button>
+                    <button class="category__btn" data-type="back">Back-End
+                        <div class="category__count">2</div></button>
+                    <button class="category__btn" data-type="mobile">Mobile
+                        <div class="category__count">1</div></button>
                 </div>
             </div>
             <div class="work__projects">
-                <a href="https://github.com/TraceOfLight" 
-                class="project" target="blank">
+                <a href="https://github.com/TraceofLight/1" 
+                class="project" target="blank" data-filter="front">
                 <img class="project__img" src="/imgs/projects/project1.png" alt="project 1">
                 <div class="project__description">
                     <h3>ANYTHING</h3>
                     <span>GOOD</span>
                 </div>
                 </a>
-                <a href="https://github.com/TraceOfLight" 
-                class="project" target="blank">
+                <a href="https://github.com/TraceoLight/2" 
+                class="project" target="blank" data-filter="front">
                 <img class="project__img" src="/imgs/projects/project2.png" alt="project 2">
                 <div class="project__description">
                     <h3>NEW</h3>
                     <span>GOOD</span>
                 </div>
                 </a>
-                <a href="https://github.com/TraceOfLight" 
-                class="project" target="blank">
+                <a href="https://github.com/TraceofLight/3" 
+                class="project" target="blank" data-filter="front">
                 <img class="project__img" src="/imgs/projects/project3.png" alt="project 3">
                 <div class="project__description">
                     <h3>ANYTHING</h3>
                     <span>GOOD</span>
                 </div>
                 </a>
-                <a href="https://github.com/TraceOfLight" 
-                class="project" target="blank">
+                <a href="https://github.com/TraceofLight/4" 
+                class="project" target="blank" data-filter="back">
                 <img class="project__img" src="/imgs/projects/project4.png" alt="project 4">
                 <div class="project__description">
                     <h3>NEW</h3>
                     <span>GOOD</span>
                 </div>    
                 </a>
-                <a href="https://github.com/TraceOfLight" 
-                class="project" target="blank">
+                <a href="https://github.com/TraceofLight/5" 
+                class="project" target="blank" data-filter="back">
                 <img class="project__img" src="/imgs/projects/project5.png" alt="project 5">
                 <div class="project__description">
                     <h3>ANYTHING</h3>
                     <span>GOOD</span>
                 </div>
                 </a>
-                <a href="https://github.com/TraceOfLight" 
-                class="project" target="blank">
+                <a href="https://github.com/TraceofLight/6" 
+                class="project" target="blank" data-filter="mobile">
                 <img class="project__img" src="/imgs/projects/project6.png" alt="project 6">
                 <div class="project__description">
                     <h3>NEW</h3>
@@ -292,5 +297,6 @@
             <img src="/imgs/arrow.png" 
             alt="arrow_up_icon">
         </button>
+    </div>
 </body>
 </html>

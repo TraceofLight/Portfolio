@@ -159,5 +159,28 @@ function Arrow() {
 
 Arrow();
 
+// Filtering my projects
+
+function sorting() {
+  const category_btn = document.querySelectorAll('.category__btn');
+  const project = document.querySelectorAll('.project');
+  project.forEach(target => target.classList.add('project__display'));
+  for (let i = 0; i < category_btn.length ; i++) {
+    for (let j = 0; j < project.length; j++) {
+      category_btn[i].addEventListener('click', (btn) => {
+        const filter =  project[j].dataset.filter;
+        if (filter == category_btn[i].dataset.type) {
+          project[j].classList.add('project__display');
+        } else if ('all' == btn.target.dataset.type) {
+          project.forEach(target => target.classList.add('project__display'));
+        } else {
+        project[j].classList.remove('project__display');
+        };
+      });
+    }};
+  };
+
+sorting();
+
 // Test code
 // const media = matchMedia("screen and (max-width: 840px)");
