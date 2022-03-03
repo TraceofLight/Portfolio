@@ -413,19 +413,26 @@ button {
   justify-content: center;
 }
 
+.anim-out {
+  opacity: 0;
+  transform: scale(0.9) translateY(40px);
+  transition: all var(--animation-duration) ease;
+}
+
 .project {
   position: relative;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 280px;
   height: 250px;
   margin: 3px;
   background-color: var(--color-light-white);
+  transition: all var(--animation-duration) ease-in;
 }
 
-.project__display {
-  display: flex;
+.project__invisible {
+  display: none;
 }
 
 .project__description {

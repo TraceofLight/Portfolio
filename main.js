@@ -164,18 +164,24 @@ Arrow();
 function sorting() {
   const category_btn = document.querySelectorAll('.category__btn');
   const project = document.querySelectorAll('.project');
-  project.forEach(target => target.classList.add('project__display'));
+  const projectContainer = document.querySelector('.work__projects');
+  console.log(projectContainer);
+  project.forEach(target => target.classList.add('project__display'));   
   for (let i = 0; i < category_btn.length ; i++) {
     for (let j = 0; j < project.length; j++) {
       category_btn[i].addEventListener('click', (btn) => {
         const filter =  project[j].dataset.filter;
-        if (filter == category_btn[i].dataset.type) {
-          project[j].classList.add('project__display');
-        } else if ('all' == btn.target.dataset.type) {
-          project.forEach(target => target.classList.add('project__display'));
-        } else {
-        project[j].classList.remove('project__display');
-        };
+        const targetBtn = btn.target;
+        if (filter == targetBtn.dataset.type || targetBtn.dataset.type == 'all') {
+          project[j].classList.remove('project__invisible');
+          projectContainer.classList.add('.anim-out');
+        } else {    
+          project[j].classList.add('project__invisible');
+          projectContainer.classList.add('.anim-out');
+        }
+        setTimeout(() => {
+          projectContainer.classList.remove('.anim-out');
+        }, 500);;
       });
     }};
   };
