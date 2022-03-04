@@ -582,10 +582,10 @@ button {
     align-items: flex-start;
   }
   .navbar__menu {
+    display: none;
     flex-direction: column;
     text-align: center;
     margin: 4px auto;
-    display: none;
     transition: all var(--animation-duration) ease-in-out;
   }
 
@@ -612,12 +612,13 @@ button {
     transition: all var(--animation-duration) ease-in-out;
   }
 
-  .navbar__menu_toggle {
+  .navbar__menu_visible {
     display: flex;
-    transition: all var(--animation-duration) ease-in-out;
   }
 }
-
+.anim_nav {
+  transform: scale(0.9);
+}
 @media screen and (max-width: 450px) {
   #full_container {
     min-width: 450px;

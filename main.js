@@ -31,18 +31,25 @@ document.addEventListener("scroll", () => {
 
 // navbar-menu control
 
-const navbar__toggle = document.getElementsByClassName("navbar__toggle-btn");
-const navbar__menu = document.getElementsByClassName("navbar__menu");
-const navbar__menu_style = window.getComputedStyle(navbar__menu[0]);
-
-navbar__toggle[0].addEventListener("click", display);
-function display() {
-  if (navbar__menu_style.display == "none") {
-    navbar__menu[0].classList.add("navbar__menu_toggle");
-  } else {
-    navbar__menu[0].classList.remove("navbar__menu_toggle");
-  }
+function actionTime(anything, action) {
+  anything.classList.add(action);
+  setTimeout(() => {
+    anything.classList.remove(action);
+  }, 300);
 }
+
+const navbar__toggle = document.querySelector(".navbar__toggle-btn");
+const navbar__menu = document.querySelector(".navbar__menu");
+const navbar__menu_style = window.getComputedStyle(navbar__menu);
+
+navbar__toggle.addEventListener("click", () => {
+  actionTime(navbar__menu, "anim_nav");
+  if (navbar__menu_style.display == "none") {
+    navbar__menu.classList.add("navbar__menu_visible");
+  } else {
+    navbar__menu.classList.remove("navbar__menu_visible");
+  }
+});
 
 // Scroll to section
 
@@ -56,7 +63,7 @@ navbarMenu.addEventListener("click", (event) => {
   //  console.log(target.dataset.link);
   const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: "smooth" });
-  navbar__menu[0].classList.remove("navbar__menu_toggle");
+  navbar__menu.classList.remove("navbar__menu_visible");
 });
 
 // Scroll to Contact Me
@@ -160,13 +167,6 @@ Arrow();
 
 // Filtering my projects
 
-function actiontime(anything, action) {
-  anything.classList.add(action);
-  setTimeout(() => {
-    anything.classList.remove(action);
-  }, 300);
-}
-
 function sorting() {
   const category_btn = document.querySelectorAll(".category__btn");
   const project = document.querySelectorAll(".project");
@@ -179,7 +179,7 @@ function sorting() {
         if (targetBtn.dataset.type == undefined) {
           targetBtn = btn.target.parentElement;
         }
-        actiontime(projectContainer, "anim-out");
+        actionTime(projectContainer, "anim-out");
         const filter = project[j].dataset.filter;
         if (
           filter == targetBtn.dataset.type ||
