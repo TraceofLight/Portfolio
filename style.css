@@ -378,7 +378,6 @@ button {
 }
 
 .category__btn:hover {
-  /* 시간차 변화 */
   transition: var(--animation-duration);
   background-color: var(--color-coral);
   color: var(--color-grey);
@@ -570,7 +569,6 @@ button {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .navbar__toggle-btn {
     display: flex;
   }
@@ -583,12 +581,16 @@ button {
   }
   .navbar__menu {
     display: none;
-    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
-    margin: 4px auto;
-    transition: all var(--animation-duration) ease-in-out;
+    margin: auto;
+    flex-wrap: wrap;
+    transition: all var(--animation-duration) ease-out;
   }
-
+  .navbar__menu__item {
+    min-width: 100px;
+    margin: 4px 6.5%;
+  }
   .about__majors {
     flex-direction: column;
   }
@@ -619,12 +621,22 @@ button {
 .anim_nav {
   transform: scale(0.9);
 }
+
+@media screen and (max-width: 550px) {
+  .navbar__menu__item {
+    margin: 4px 4.5%;
+  }
+}
+
 @media screen and (max-width: 450px) {
   #full_container {
     min-width: 450px;
   }
-}
 
+  .navbar__menu {
+    flex-direction: column;
+  }
+}
 /* 직접 짠 코드 수정 전
 
 #about {
