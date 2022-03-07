@@ -1,5 +1,12 @@
 "Use Strict";
 
+const home = document.querySelector("#home");
+const about = document.querySelector("#about");
+const skills = document.querySelector("#skills");
+const work = document.querySelector("#work");
+const testimonials = document.querySelector("#testimonials");
+const contact = document.querySelector("#contact");
+
 // stick the navbar & Transperent
 
 function getHeight(id) {
@@ -51,6 +58,47 @@ navbar__toggle.addEventListener("click", () => {
   }
 });
 
+// Remove the selection and select the new one
+
+navbar__menu.addEventListener("click", (btn) => {
+  const active = document.querySelector(".selected");
+  active.classList.remove("selected");
+  btn.target.classList.add("selected");
+});
+
+// Selection by scroll
+/* 
+window.addEventListener("scroll", () => {
+  const active = document.querySelector(".selected");
+  const scroll = window.scrollY;
+  const option = [];
+  option[0] = about.offsetTop > scroll && scroll >= home.offsetTop;
+  option[1] = skills.offsetTop > scroll && scroll >= about.offsetTop;
+  option[2] = work.offsetTop > scroll && scroll >= skills.offsetTop;
+  option[3] = testimonials.offsetTop > scroll && scroll >= work.offsetTop;
+  option[4] = contact.offsetTop > scroll && scroll >= testimonials.offsetTop;
+  option[5] = scroll >= contact.offsetTop;
+
+  function findTrue() {
+    console.log(option.forEach());
+    if (option.forEach() == true) {
+      return;
+    }
+    console.log(findTrue);
+  }
+  console.log(option);
+  console.log(option.find(findTrue()));
+  console.log(`${scroll} is now position. and ${about.offsetTop}`);
+});
+// console.log(about.offsetTop > scroll && scroll >= home.offsetTop);
+  switch (option) {
+    case true:
+      //console.log(about.offsetTop > scroll && scroll >= home.offsetTop);
+      active.classList.remove("selected");
+      skills.classList.add("selected");
+      break;
+  } */
+//  console.log(window.scrollY);
 // Scroll to section
 
 const navbarMenu = document.querySelector(".navbar__menu");
@@ -77,7 +125,7 @@ contactBtn.addEventListener("click", () => {
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
-  navbar__menu[0].classList.remove("navbar__menu_toggle");
+  navbar__menu.classList.remove("navbar__menu_toggle");
 }
 
 // og_code
@@ -118,7 +166,6 @@ function fading(id) {
   document.addEventListener('scroll', () => {
     if (window.scrollY - getHeight(id) > 0) {
       console.log(id);
-
       //id_.classList.add("fading");
       console.log(`${window.scrollY} and ${getHeight(id)}`)
     } else {

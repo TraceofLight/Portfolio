@@ -149,8 +149,9 @@ button {
   font-weight: var(--weight-semi-bold);
 }
 
-.navbar__menu__item.active {
+.navbar__menu__item.selected {
   border: 2px solid var(--color-white);
+  transition: all var(--animation-duration) ease-in;
 }
 
 .navbar__menu__item:hover {
@@ -413,8 +414,8 @@ button {
 }
 
 .anim-out {
-  opacity: 0.5;
-  transform: scale(0.9) translateY(-20px);
+  opacity: 0;
+  transform: scale(0.9) translateX(-20px) translateY(-20px);
 }
 
 .project {
